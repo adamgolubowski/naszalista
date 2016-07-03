@@ -11,5 +11,5 @@ tests/coverage_html/
 tests/.coverage
 build/
 tests/report/
-naszalista/settings.py
+naszalista/settings_secret.py
 lista/migrations/
