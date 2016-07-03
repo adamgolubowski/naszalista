@@ -12,4 +12,5 @@ tests/.coverage
 build/
 tests/report/
 naszalista/settings_secret.py
+naszalista/secretkey
 lista/migrations/
