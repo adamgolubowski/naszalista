@@ -1,0 +1,32 @@
+{% load staticfiles %}
+<html>
+
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://bootswatch.com/simplex/bootstrap.css">
+    <link rel="stylesheet" href="https://bootswatch.com/simplex/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/lista.css' %}">
+    <title>Lista Uli i Adama</title>
+</head>
+
+<body>
+    <div class="page-header">
+        <h1>
+                Lista Uli i Adama
+            </h1>
+        <h3>
+                Lista propozycji prezentów. Zamiast kwiatków ;)
+        </h3>
+    </div>
+    <div class="content container">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <div class="footer navbar-bottom">
+        <p>W razie pytań skontaktuj się z Ulą lub Adamem</p>
+        <p>Przygotowane przez Adama | <a href="https://adamgolubowski.github.io/" >adamgolubowski.github.io</a></p>
+    </div>
+</body>
+
+</html>

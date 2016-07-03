@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>Aby zarezerwować {{item.title}} podaj swoje imię</h2>
+    <form method="POST" class="item-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Zapisz</button>
+    </form>
+{% endblock %}
