@@ -1,8 +1,17 @@
-{% extends 'base.html' %}
-{% block content %}
-    <h2>Aby zarezerwować {{item.title}} podaj swoje imię</h2>
-    <form method="POST" class="item-form">{% csrf_token %}
-        {{ form.as_p }}
+{% extends 'base.html' %} {% block content %}
+<h2>Aby zarezerwować "{{item.title}}" podaj swoje imię oraz hasło</h2>
+<div class="col-md-6">
+    <form method="POST" class="item-form">{% csrf_token %} {{ form.non_field_errors }}
+        <div class="fieldWrapper">
+            <label for="{{ form.donor.id_for_label }}">Imie:</label> {{ form.donor }}
+            {{ form.donor.errors }}
+        </div>
+        <div class="fieldWrapper">
+            <label for="{{ form.pwd.id_for_label }}">Hasło:</label> {{ form.pwd }}
+            {{ form.pwd.errors }}
+        </div>
+        <a href="{% url 'items_list' %}" class="btn btn-default">Anuluj</a>
         <button type="submit" class="save btn btn-default">Zapisz</button>
     </form>
+</div>
 {% endblock %}

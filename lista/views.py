@@ -19,4 +19,4 @@ def donate(request,pk):
             return redirect('items_list')
     else:
         form = donorForm()
-        return render(request, 'donor.html', {'item': item, 'form':form})
+    return render(request, 'donor.html', {'item': item, 'form':form})
