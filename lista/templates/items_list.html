@@ -11,10 +11,10 @@
                     <p>{{item.description|linebreaksbr}}</p>
                     <h4>
                         {% if not item.donor %}
-                            Ta książka jeszcze nie została zajęta. Może się zdecydujesz? 
+                            Ta książka jeszcze nie została zarezerwowa. Jeśli chesz ją zająć kliknij:  
                             <a href="{% url 'donor' pk=item.pk%}"><span class="glyphicon glyphicon-pencil"></span></a>
                         {% else %}
-                            {{ item.donor }} już zajął tę książkę.
+                            {{ item.donor }} już zarezerwował tę książkę.
                         {% endif %}
                     </h4>
                 </div>
