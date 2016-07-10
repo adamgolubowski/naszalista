@@ -2,11 +2,16 @@ from django.shortcuts import render, get_object_or_404
 from .models import Item
 from .forms import donorForm
 from django.shortcuts import redirect
+from django.db.models import Q
 
 # Create your views here.
-def items_list(request):
-    items = Item.objects.all()
+def items_list(request, choice=None):
+    if choice=='notBooked':
+         items = Item.objects.filter(Q(donor__exact='') | Q(donor__isnull=True))
+         #items = Item.objects.filter(donor__exact='')
+    else: items = Item.objects.all()
     return render(request,'items_list.html',{'items':items})
+    
 
 
 def donate(request,pk):

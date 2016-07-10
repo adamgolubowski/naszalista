@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
+        <div class="selection row">
+            <a href="{% url 'items_list' %}" class="btn btn-default">Pokaż wszystkie</a>
+            <a href="{% url 'items_list_select' choice='notBooked' %}" class="btn btn-default">Pokaż wolne</a>
+        </div>
         {% for item in items %}
         <div class="row">
             <div class="book_cover col-md-1">

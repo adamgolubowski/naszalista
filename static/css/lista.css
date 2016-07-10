@@ -23,6 +23,7 @@ img{
     background-color: #7faf0c;
     color: #ffffff;
     padding-left: 20px;
+    padding-top: 5px;
     font-family: 'Ubuntu', sans-serif;
 }
 
@@ -41,6 +42,10 @@ img{
 
 .content {
     margin-left: 40px;
+}
+
+.selection{
+    margin-bottom: 20px;
 }
 
 .book_cover{
