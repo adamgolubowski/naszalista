@@ -6,9 +6,10 @@ from django.db.models import Q
 
 # Create your views here.
 def items_list(request, choice=None):
-    if choice=='notBooked':
+    if choice=='notbooked':
          items = Item.objects.filter(Q(donor__exact='') | Q(donor__isnull=True))
-         #items = Item.objects.filter(donor__exact='')
+    elif choice=='booked':
+        items = Item.objects.exclude(donor__exact='').exclude(donor__isnull=True)
     else: items = Item.objects.all()
     return render(request,'items_list.html',{'items':items})
     

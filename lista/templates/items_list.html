@@ -1,19 +1,21 @@
-{% extends 'base.html' %}
-{% block content %}
-        <div class="selection row">
-            <a href="{% url 'items_list' %}" class="btn btn-default">Pokaż wszystkie</a>
-            <a href="{% url 'items_list_select' choice='notBooked' %}" class="btn btn-default">Pokaż wolne</a>
-        </div>
-        {% for item in items %}
-        <div class="row">
-            <div class="book_cover col-md-1">
-                <p><img src="{{item.photo.url}}"></p>
-            </div>
-            <div class="col-md-10 col-md-offset-1">
-                <div class=item>
-                    <h2>{{item.title}}</h2>
-                    <p>{{item.description|linebreaksbr}}</p>
-                    <h4>
+{% extends 'base.html' %} {% block content %}
+<div class="selection row">
+    <h3>Pokaż: 
+            <a href="{% url 'items_list' %}" class="btn btn-default">Wszystkie</a>
+            <a href="{% url 'items_list_select' choice='notbooked' %}" class="btn btn-default">Wolne</a>
+            <a href="{% url 'items_list_select' choice='booked' %}" class="btn btn-default">Zajęte</a>
+            </h3>
+</div>
+{% for item in items %}
+<div class="row">
+    <div class="book_cover col-md-1">
+        <p><img src="{{item.photo.url}}"></p>
+    </div>
+    <div class="col-md-10 col-md-offset-1">
+        <div class=item>
+            <h2>{{item.title}}</h2>
+            <p>{{item.description|linebreaksbr}}</p>
+            <h4>
                         {% if not item.donor %}
                             Ta książka jeszcze nie została zarezerwowa. Jeśli chesz ją zająć kliknij:  
                             <a href="{% url 'donor' pk=item.pk%}"><span class="glyphicon glyphicon-pencil"></span></a>
@@ -21,8 +23,7 @@
                             {{ item.donor }} już zarezerwował(a) tę książkę.
                         {% endif %}
                     </h4>
-                </div>
-            </div>
         </div>
-        {% endfor %}
-{% endblock content %}
+    </div>
+</div>
+{% endfor %} {% endblock content %}
