@@ -4,6 +4,7 @@
             <a href="{% url 'items_list' %}" class="btn btn-default">Wszystkie</a>
             <a href="{% url 'items_list_select' choice='notbooked' %}" class="btn btn-default">Wolne</a>
             <a href="{% url 'items_list_select' choice='booked' %}" class="btn btn-default">Zajęte</a>
+            <a href="{% url 'items_list_select' choice='random' %}" class="btn btn-default">Losową</a>
             </h3>
 </div>
 {% for item in items %}

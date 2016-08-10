@@ -3,6 +3,7 @@ from .models import Item
 from .forms import donorForm
 from django.shortcuts import redirect
 from django.db.models import Q
+from random import randint
 
 # Create your views here.
 def items_list(request, choice=None):
@@ -10,6 +11,11 @@ def items_list(request, choice=None):
          items = Item.objects.filter(Q(donor__exact='') | Q(donor__isnull=True))
     elif choice=='booked':
         items = Item.objects.exclude(donor__exact='').exclude(donor__isnull=True)
+    elif choice=='random':
+        random_index = randint(0,Item.objects.count() - 1)
+        random_el = Item.objects.all()[random_index]
+        items =[]
+        items.append(random_el)
     else: items = Item.objects.all()
     return render(request,'items_list.html',{'items':items})
     
