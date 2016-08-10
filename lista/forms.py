@@ -2,6 +2,7 @@
 from django import forms
 from .models import Item
 from django.utils.translation import ugettext_lazy as _
+from django.conf import settings
 
 class donorForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
@@ -19,7 +20,8 @@ class donorForm(forms.ModelForm):
    
     def clean_pwd(self):
         pwd = self.cleaned_data['pwd']
-        if pwd !='adamiula':
+        #if pwd !='adamiula':
+        if pwd != settings.BOOKING_PWD:
             raise forms.ValidationError("Nieprawidłowe hasło")
         return pwd
         

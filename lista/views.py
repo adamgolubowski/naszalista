@@ -26,3 +26,6 @@ def donate(request,pk):
     else:
         form = donorForm()
     return render(request, 'donor.html', {'item': item, 'form':form})
+
+def info(request):
+    return render(request,'info.html')

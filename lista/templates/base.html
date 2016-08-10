@@ -12,12 +12,15 @@
 
 <body>
     <div class="page-header">
-        <h1>
-                Lista Uli i Adama
-            </h1>
+    <div class="row">
+        <div class="col-sm-4"><h1><a href="{% url 'items_list' %}">Lista Uli i Adama</a></h1></div><div class="col-sm-8" align="right"><h1><a href="{% url 'info' %}"><span class="glyphicon glyphicon-question-sign"></span></a></h1></div>
+    </div>
+    <div class="row">
         <h3>
                 Lista propozycji prezentów. Zamiast kwiatków ;)
         </h3>
+    </div>
+        
     </div>
     <div class="content container">
         {% block content %}
@@ -25,7 +28,7 @@
     </div>
     <div class="footer navbar-bottom">
         <p>W razie pytań skontaktuj się z Ulą lub Adamem</p>
-        <p>Przygotowane przez Adama | <a href="http://adamgolubowski.github.io/" >adamgolubowski.github.io</a></p>
+        <p>Przygotowane przez Adama | <a href="http://adamgolubowski.github.io/" target="_blank">adamgolubowski.github.io</a></p>
     </div>
 </body>
 

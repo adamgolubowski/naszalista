@@ -128,3 +128,5 @@ STATICFILES_DIRS = (
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+BOOKING_PWD = open(os.path.expanduser('./naszalista/bookingpwd_secret')).read().strip()
