@@ -20,7 +20,6 @@ class donorForm(forms.ModelForm):
    
     def clean_pwd(self):
         pwd = self.cleaned_data['pwd']
-        #if pwd !='adamiula':
         if pwd != settings.BOOKING_PWD:
             raise forms.ValidationError("Nieprawidłowe hasło")
         return pwd
