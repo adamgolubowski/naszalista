@@ -1,9 +1,11 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, render_to_response
 from .models import Item
 from .forms import donorForm
 from django.shortcuts import redirect
 from django.db.models import Q
 from random import randint
+from django.template import RequestContext
+
 
 # Create your views here.
 def items_list(request, choice=None):
@@ -35,3 +37,14 @@ def donate(request,pk):
 
 def info(request):
     return render(request,'info.html')
+    
+    
+def bad_request(request):
+    response = render_to_response(
+        '400.html',
+        context_instance=RequestContext(request)
+    )
+    
+    response.status_code = 400
+    
+    return response
