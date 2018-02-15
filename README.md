@@ -1,5 +1,10 @@
 # Nasza Lista / Simple gift list
 This is a simple gift list. Owners can add items with description and pictures. Users can book items and view bookings.
+Main screen:
+![main screen](https://raw.githubusercontent.com/adamgolubowski/naszalista/master/main.png)
+
+Booking form:
+![booking form](https://raw.githubusercontent.com/adamgolubowski/naszalista/master/booking.png)
 
 ## Setup
 Add two files to the /naszalista folder:
